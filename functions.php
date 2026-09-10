@@ -4,7 +4,6 @@
  * Theme Function
  */
 
-
 //Enqueue script and style
 
 function practice_theme_scripts() {
@@ -29,8 +28,6 @@ function practice_theme_scripts() {
         wp_get_theme()->get( 'Version' ), 
         true
     );
-
-
 
     //inline js
     $custom_js = " console.log('Allah Mohan'); ";
@@ -83,13 +80,9 @@ add_action( 'after_setup_theme', 'practice_theme_setup' );
 // Register Customizer Settings
 require_once get_template_directory() . '/inc/customizer.php';
 
-//Custom Post type for mission
-require_once get_template_directory().'/inc/custompost-t.php';
-
-
 // Register Sidebars and Widgets
-require_once get_template_directory().'/inc/sidebar-re.php';
+require_once get_template_directory() . '/inc/sidebar-re.php';
 
-
-
+//Custom Post type for mission
+require_once get_template_directory() .'/inc/custompost-t.php';
 

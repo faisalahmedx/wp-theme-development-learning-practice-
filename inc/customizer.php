@@ -6,7 +6,7 @@ function heroiamge_customize_register( $wp_customize ){
     $wp_customize -> add_section ('hero_image', array(
         'title' => __('Hero Section','practice-theme'),
         'priority'  => 30,
-        'descriptoin' => __('Customize hero area text and images','$wp_customize')
+        'descriptoin' => __('Customize hero area text and images','practice-theme')
     ));
 
     $wp_customize -> add_setting('hero_image_setting', array(
@@ -18,6 +18,20 @@ function heroiamge_customize_register( $wp_customize ){
         'section' => 'hero_image',
         'setting' => 'hero_image_setting',
     )));
+
+    //hero title 
+    $wp_customize -> add_setting('hero_title_setting', array(
+        'default' => __('Together We Can Build a <br>
+                <span class="gradient-text">DrugZero Bangladesh</span>', 'practice-theme'),
+        'sanitize_callback' => 'wp_kses_post',
+    ));
+    $wp_customize -> add_control( 'hero_title_setting',array(
+        'label'   => __('Hero Title','practice-theme'),
+        'section' => 'hero_image',
+        'setting' => 'hero-title_setting',
+        'description' => 'you can change hero title from here', 
+        'type'     => 'textarea',
+    ) );
 
 }
 
