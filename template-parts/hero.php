@@ -5,11 +5,13 @@
                 <h1 class="hero-title">
                 <?php echo wp_kses_post( get_theme_mod( 'hero_title_setting', 'Together We Can Build a <br><span class="gradient-text">DrugZero Bangladesh</span>') ); ?>
                 </h1>
-                <p>We are a voluntary organization working to prevent drug abuse through awareness, education, and community support.</p>
+                <p> <?php echo esc_html( get_theme_mod('hero_description_setting','We are a voluntary organization working to prevent drug abuse through awareness, education, and community support.') ); ?> </p>
+
                 <div class="hero-buttons">
-                    <a href="#help" class="btn btn-primary">Make an Impact</a>
+                    <a href="<?php echo esc_url( get_theme_mod('hero_button_url','#help') ); ?>" class="btn btn-primary"><?php echo esc_html( get_theme_mod('hero_button_title','Make an Impact') );?></a>
                     <a href="#contact" class="btn btn-secondary">Get Support</a>
                 </div>
+                
             </div>
             <div class="hero-image">
                 <img src="<?php echo esc_url(get_theme_mod('hero_image_setting', get_theme_file_uri() . '/assets/images/Community support group.webp')); ?>" alt="<?php echo esc_attr( get_bloginfo('name')); ?>">
