@@ -44,5 +44,10 @@
 
 
         </div>
+
+        <div class="help-button">
+            <a href="<?php echo get_post_type_archive_link('post'); ?>" class="btn btn-primary"><?php _e( 'View All', 'practice-theme' ); ?></a>
+        </div>
+
     </div>
 </section>

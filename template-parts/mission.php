@@ -31,7 +31,7 @@
                     <div class="card-body">
                         <h3><?php esc_html(the_title()); ?></h3>
                         <div class="card-text">
-                            <?php esc_html(the_content()); ?>
+                            <?php echo esc_html( wp_trim_words( get_the_excerpt(), 15, '...' ) ); ?>
                         </div>
                     </div>
 
