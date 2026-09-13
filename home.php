@@ -9,14 +9,7 @@ get_header();
 ?>
 
 <div class="container archive-wrapper">
-    
-    <!-- Archive Header (Centered Title) -->
-    <div class="archive-header">
-        <?php
-        the_archive_title( '<h1 class="archive-title">', '</h1>' );
-        the_archive_description( '<div class="archive-description">', '</div>' );
-        ?>
-    </div>
+
 
     <!-- Posts Grid (3 Columns) -->
     <div class="archive-grid">
