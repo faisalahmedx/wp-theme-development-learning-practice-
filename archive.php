@@ -1,8 +1,6 @@
 <?php
 /**
  * Archive Template (Full Width - 3 Columns)
- *
- * @package YourTheme
  */
 
 get_header(); 

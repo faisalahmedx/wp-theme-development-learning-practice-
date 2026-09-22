@@ -307,57 +307,109 @@ body {
 
 
 /* ----------------------------------
-    MISSION SECTION
+   MISSION & ACTIVITIES SECTION
 ---------------------------------- */
 #mission {
-    background-color: #f9fffc;
+    background-color: #f9fffc; /* হালকা সফট ব্যাকগ্রাউন্ড */
 }
 
+/* Section Header */
 .section-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 
+.section-title {
+    font-size: 2.2rem;
+    color: #11552C; /* থিমের প্রাইমারি কালার */
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: #555555;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Grid Layout */
 .activities-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
+/* Card Main Design */
 .activity-card {
-    background: var(--white);
-    border-radius: 10px;
-    overflow: hidden; /* ডুপ্লিকেট কোড বাদ দিয়ে একটি রাখা হয়েছে */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: var(--transition);
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eef5f1;
 }
 
+/* Hover Effect on Entire Card */
 .activity-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(17, 85, 44, 0.12);
 }
 
+/* Full Card Link Styling */
+.activity-card .card-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit; /* ডিফল্ট আন্ডারলাইন ও ব্লু কালার রিমুভ করা */
+}
+
+/* Image Wrapper and Scaling */
 .activity-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
 }
 
+/* Image Zoom Effect on Hover */
+.activity-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Card Body Content */
 .activity-card .card-body {
-    padding: 20px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background: #ffffff;
 }
 
+/* Card Title */
 .activity-card h3 {
-    color: var(--primary-color);
+    color: #11552C;
+    font-size: 1.25rem;
     margin-bottom: 10px;
-    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.4;
+    transition: color 0.3s ease;
 }
 
-.activity-card p {
+.activity-card:hover h3 {
+    color: #0b3d1f; /* হোভার করলে টাইটেল রঙ একটু গাঢ় হবে */
+}
+
+/* Card Text / Excerpt */
+.activity-card .card-text {
     font-size: 0.95rem;
-    color: var(--text-light);
+    color: #666666;
+    line-height: 1.6;
     word-break: break-word;
-    overflow-wrap: break-word; 
+    overflow-wrap: break-word;
 }
 
 
@@ -1975,4 +2027,82 @@ body {
     font-size: 0.95rem;
     word-break: break-word;
     overflow-wrap: break-word;
+}
+
+
+
+
+
+
+
+/* ----------------------------------
+   SINGLE MISSION PAGE STYLES
+---------------------------------- */
+.single-mission-page {
+    padding: 60px 0;
+    background-color: #f9fffc;
+}
+
+.mission-details-card {
+    max-width: 800px; /* সাইডবার ছাড়া কনটেন্ট সুন্দর দেখানোর জন্য মেজারমেন্ট */
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eef5f1;
+}
+
+.single-mission-page .entry-title {
+    color: #11552C;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.single-mission-page .entry-meta {
+    font-size: 0.9rem;
+    color: #777777;
+    margin-bottom: 30px;
+}
+
+.mission-featured-image {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.mission-featured-image img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.single-mission-page .entry-content {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #333333;
+    margin-bottom: 40px;
+}
+
+.single-mission-page .entry-footer {
+    border-top: 1px solid #eeeeee;
+    padding-top: 25px;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 10px 22px;
+    background-color: #11552C;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: #0b3d1f;
+    color: #ffffff;
 }

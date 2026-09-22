@@ -56,6 +56,11 @@ function practice_theme_setup() {
     load_theme_textdomain( 'practice-theme',get_template_directory().'/languages' );
 
     add_theme_support('post-thumbnails');
+    
+    //Title Tag
+    add_theme_support('title-tag');
+
+    //Site Icon
     add_theme_support('site-icon');
     //array('post','page','service')
     add_theme_support('post-formats', array('aside','gallery','quate','image','image', 'video', 'audio'));

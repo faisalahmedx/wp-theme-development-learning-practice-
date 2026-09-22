@@ -11,30 +11,35 @@
         <div class="activities-grid">
         <?php
         $mission_query = new WP_Query( array(
-            'post_type'      => 'our_mission',
+            'post_type'      => 'our-mission',
             'posts_per_page' => 3,
             'orderby'        => 'date',
-            'order'          => 'DESC'
+            'order'          => 'ASC'
         ));
 
         if ( $mission_query->have_posts() ) :
             while ( $mission_query->have_posts() ) : $mission_query->the_post();
         ?>
                 <div class="activity-card">
+                    <a href="<?php the_permalink(); ?>" class="card-link">
+                        
+                        <?php if ( has_post_thumbnail() ) : ?>
+                            <?php the_post_thumbnail('medium'); ?>
+                        <?php else : ?>
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/1.webp" alt="<?php the_title_attribute(); ?>">
+                        <?php endif; ?>
 
-                    <?php if ( has_post_thumbnail() ) : ?>
-                        <?php the_post_thumbnail('medium'); ?>
-                    <?php else : ?>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/1.webp" alt="<?php the_title_attribute(); ?>">
-                    <?php endif; ?>
-
-                    <div class="card-body">
-                        <h3><?php esc_html(the_title()); ?></h3>
-                        <div class="card-text">
-                            <?php echo esc_html( wp_trim_words( get_the_excerpt(), 15, '...' ) ); ?>
+                        <div class="card-body">
+                            <h3><?php the_title(); ?></h3>
+                           <div class="card-text">
+                            <?php 
+                            $excerpt = has_excerpt() ? get_the_excerpt() : get_the_content();
+                            echo esc_html( wp_trim_words( strip_shortcodes( $excerpt ), 15, '...' ) ); 
+                            ?>
                         </div>
-                    </div>
+                        </div>
 
+                    </a>
                 </div>
         <?php
             endwhile;
