@@ -35,7 +35,7 @@ add_action('init','practice_custom_post');
 
 
 
-// 1. Mission Post Type-er jonno Custom Taxonomy Register Kora
+// 1.Custom Taxonomy Register for Mission Post Type-er
 function create_mission_custom_taxonomy() {
     $labels = array(
         'name'              => __('Mission Categories','practice-theme'),
@@ -52,10 +52,10 @@ function create_mission_custom_taxonomy() {
     );
 
     $args = array(
-        'hierarchical'      => true, // true dile Category-r moto kaj korbe (checkbox thakbe)
+        'hierarchical'      => true,
         'labels'            => $labels,
         'show_ui'           => true,
-        'show_admin_column' => true, // Dashboard-e post list column-e category dekhabe
+        'show_admin_column' => true, 
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'mission-category' ), // URL Slug
     );

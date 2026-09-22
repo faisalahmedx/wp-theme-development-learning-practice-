@@ -26,6 +26,17 @@ get_header();
                             <i class="dashicons dashicons-calendar-alt"></i> <?php echo get_the_date(); ?>
                         </span>
                     </div>
+
+                    <div class="mission-category-badge">
+                        <?php
+                        $terms = get_the_terms( get_the_ID(), 'mission_cat' );
+                        if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+                            foreach ( $terms as $term ) {
+                                echo '<a href="' . esc_url( get_term_link( $term ) ) . '" class="cat-link">' . esc_html( $term->name ) . '</a> ';
+                            }
+                        }
+                        ?>
+                    </div>
                 </header>
 
                 <!-- 2. Post Image (Custom Meta Image or Featured Image) -->
