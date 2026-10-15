@@ -17,4 +17,4 @@
                 <img src="<?php echo esc_url(get_theme_mod('hero_image_setting', get_theme_file_uri() . '/assets/images/Community support group.webp')); ?>" alt="<?php echo esc_attr( get_bloginfo('name')); ?>">
             </div>
         </div>
-    </section>
+    </section> 

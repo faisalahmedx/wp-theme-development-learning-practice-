@@ -1,8 +1,6 @@
 <?php
 /**
  * The main template file for the Blog Home Page
- *
- * @package YourTheme
  */
 
 get_header(); 

@@ -16,13 +16,13 @@ if(!function_exists('practice_custom_post')){
             'supports' => array(
                 'title','thumbnail','author','editor','excerpt',
             ),
-            'has_archive' => true,
-            'hierarchical'      => false,
-            'show_in_rest' => true,
-            'show_ui' => true,
+            'has_archive'    => true,
+            'hierarchical'   => false,
+            'show_in_rest'   => true,
+            'show_ui'        => true,
             // 'menu_icon' => 'dashicons-clipboard',
             'capability_type' => 'post',
-            'menu_position' => 20,
+            'menu_position'   => 20,
             
 
         ));
